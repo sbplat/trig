@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grapher</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <h3><i>Step By Step</i> Trigonometric Function Grapher</h3>
+    <form id="functioninfo" name="functioninfo">
+        <p>Standard form: Acos(k(x-d))+c<br>Example: <b>-5sin(2(x-3))+4</b></p>
+        <label for="amplitude">Amplitude / A</label><br>
+        <input type="number" step="any" id="amplitude" name="amplitude" placeholder="-5"><br>
+
+        <label for="functiontype">Function Type</label><br>
+        <select id="functiontype" name="functiontype">
+            <option value="sin">sin</option>
+            <option value="csc">csc</option>
+            <option value="cos">cos</option>
+            <option value="sec">sec</option>
+            <option value="tan">tan</option>
+            <option value="cot">cot</option>
+        </select><br>
+
+        <label for="periodicityfactor">Periodicity Factor / k</label><br>
+        <input type="number" step="any" id="periodicityfactor" name="periodicityfactor" placeholder="2"><br>
+
+        <label for="horizontalshift">Horizontal Shift / d</label><br>
+        <input type="number" step="any" id="horizontalshift" name="horizontalshift" placeholder="3"><br>
+
+        <label for="verticalshift">Vertical Shift / c</label><br>
+        <input type="number" step="any" id="verticalshift" name="verticalshift" placeholder="4"><br>
+
+        <br>
+        <input type="submit" value="Graph!">
+    </form>
+    <br>
+    <div id="calculator"></div>
+</body>
+</html>
