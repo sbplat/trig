@@ -183,10 +183,12 @@ function graph(amplitude, functiontype, periodicityfactor, horizontalshift, vert
     }
     if (amplitude != 1) {
         functionEquation[1] = amplitude
-        insertStep(`${amplitude < 1 ? "Compress" : "Stretch"} the height of the function vertically by a factor of ${amplitude}\n` +
-                   `The new maximimum height is |amplitude| (${amplitude})\n` +
-                   `The new minimum height is -|amplitude| (${-amplitude})`,
-                   `${functionEquation.join("")}`)
+        let explanation = `${amplitude < 1 ? "Compress" : "Stretch"} the height of the function vertically by a factor of ${amplitude}`
+        if (functiontype != "tan" && functiontype != "cot") {
+            explanation += `\nThe new maximum height is |amplitude| (${amplitude})\n` +
+                           `The new minimum height is -|amplitude| (${-amplitude})`
+        }
+        insertStep(explanation, `${functionEquation.join("")}`)
         plot([new Equation("function1", generateSinusoidalLatex(amplitude, functiontype, periodicityfactor, 0, 0), Desmos.Colors.BLACK, Desmos.Styles.SOLID)], deltaX, deltaY)
     }
     if (reflectx) {
